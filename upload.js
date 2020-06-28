@@ -25,6 +25,8 @@ if (beta) {
   remotePath = `archive.${base};`;
 }
 
+let localPath;
+
 if (flags.includes("next")) {
   localPath = "./current-site/out/";
 } else {
