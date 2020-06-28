@@ -129,6 +129,7 @@ export default function Home() {
         h6 {
           color: #666;
           font-size: 0.8em;
+          font-weight: 400;
         }
 
         header {
@@ -193,8 +194,7 @@ export default function Home() {
         h3,
         h4,
         h5,
-        h6,
-        h7 {
+        h6 {
           font-weight: 500;
           margin: 0;
         }
@@ -203,8 +203,7 @@ export default function Home() {
           font-size: 34px;
         }
 
-        p,
-        h6 {
+        p {
           font-weight: 400;
         }
 
