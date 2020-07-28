@@ -1,10 +1,9 @@
 import InternalHead from "next/head";
+import { IMetadata } from "../lib/getPostData";
 
-interface HeadProps {
-  title?: string;
+interface HeadProps extends IMetadata {
   og_title?: string;
   url: string;
-  description?: string;
 }
 
 function Head(props: HeadProps) {
