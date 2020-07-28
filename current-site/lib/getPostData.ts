@@ -5,7 +5,7 @@ import { parse, isBefore } from "date-fns";
 
 const postsDirectory = path.join(process.cwd(), "pages/blog");
 
-export function getPostSlugs(returnCustomPosts: boolean): string[] {
+export function getPostSlugs(returnCustomPosts: boolean = true): string[] {
   return fs.readdirSync(postsDirectory).filter((file) => {
     if (returnCustomPosts) {
       return !file.includes("index.js") && !file.includes("[id].js");
@@ -35,7 +35,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   }
 
   const file = fs.readFileSync(`${postsDirectory}/${slug}`, "utf8");
-  const [name, extension] = slug.split(".");
+  const { name, ext } = path.parse(slug);
 
   let metadata: IMetadata = {};
 
@@ -43,7 +43,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     metadata.slug = name;
   }
 
-  if (extension === "js") {
+  if (ext === "js") {
     const start = "/** start metadata";
     const openBrackets = file.indexOf(start);
     const closingBrackets = file.indexOf("end metadata **/");
@@ -81,7 +81,7 @@ const parseDate = (date: string) => parse(date, "MMMM dd, yyyy", new Date());
 
 export function getAllPosts(
   fields: string[] = [],
-  returnCustomPosts: boolean = true
+  returnCustomPosts: boolean
 ): IMetadata[] {
   const slugs = getPostSlugs(returnCustomPosts);
   const posts = slugs
