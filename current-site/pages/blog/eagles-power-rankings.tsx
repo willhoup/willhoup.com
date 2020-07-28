@@ -149,7 +149,7 @@ export default function Eagles() {
           </p>
 
           <div className="twitter-embed">
-            <blockquote className="twitter-tweet" datalang="en">
+            <blockquote className="twitter-tweet">
               <p lang="en" dir="ltr">
                 that makes no sense.{" "}
                 <ExternalLink href="https://twitter.com/hashtag/Eagles?src=hash">

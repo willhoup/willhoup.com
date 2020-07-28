@@ -100,10 +100,4 @@ function Head(props: HeadProps) {
   );
 }
 
-Head.defaultProps = {
-  title: "Will Houp",
-  og_title: "Will Houp",
-  description: "",
-};
-
 export default Head;

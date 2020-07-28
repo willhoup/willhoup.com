@@ -81,7 +81,7 @@ const parseDate = (date: string) => parse(date, "MMMM dd, yyyy", new Date());
 
 export function getAllPosts(
   fields: string[] = [],
-  returnCustomPosts: boolean
+  returnCustomPosts?: boolean
 ): IMetadata[] {
   const slugs = getPostSlugs(returnCustomPosts);
   const posts = slugs
