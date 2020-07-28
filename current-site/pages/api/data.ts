@@ -1,4 +1,12 @@
-export const data = [
+export interface IProjectList {
+  name: string;
+  url: string;
+  date?: string;
+  publication?: string;
+  assets?: string[];
+}
+
+export const ProjectList: IProjectList[] = [
   {
     name: "Public coronavirus case data for the United States",
     url: "https://www.nytimes.com/article/coronavirus-county-data-us.html",
@@ -47,6 +55,5 @@ export const data = [
       "https://pilotonline.com/news/government/politics/virginia/essentially-a-coin-flip-may-determine-only-rd-power-shift/article_10789d91-69c8-5306-9c16-18fd602cc091.html",
     publication: "The Virginian-Pilot",
     date: "Dec. 22, 2017",
-    assets: [],
   },
 ];

@@ -1,0 +1,18 @@
+.markdown p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.markdown pre {
+  background-color: #fafafa;
+  padding: 1em;
+  font-family: monospace;
+  overflow-x: scroll;
+  line-height: 1.25;
+}
+
+.markdown p code {
+  padding: 0.25em;
+  font-size: 16px;
+  font-weight: bold;
+}

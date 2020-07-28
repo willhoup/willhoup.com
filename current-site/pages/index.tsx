@@ -1,29 +1,13 @@
-import Head from "next/head";
-import { data } from "./api/data";
+import Head from "../components/Head";
+import { ProjectList as data } from "./api/data";
 import ExternalLink from "../components/ExternalLink";
 import InternalLink from "next/link";
+import { ReactNode } from "react";
 
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>Will Houp | willhoup.com</title>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-48331664-1"
-        />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-48331664-1');
-            `,
-          }}
-        />
-      </Head>
+      <Head url="http://willhoup.com" />
 
       <main>
         <header>
@@ -34,14 +18,10 @@ export default function Home() {
         <article>
           <p>
             Welcome. I work at The New York Times on the{" "}
-            <a
-              href="https://twitter.com/NYTInteractive"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
+            <ExternalLink href="https://twitter.com/NYTInteractive">
               Interactive News
-            </a>{" "}
-            team and live in Jersey City, NJ, with my beautiful wife and son.
+            </ExternalLink>{" "}
+            team and live in New Jersey with my beautiful wife and son.
           </p>
 
           <p>
@@ -52,56 +32,50 @@ export default function Home() {
 
           <p>
             I'm a big fan of the Philadelphia Eagles and{" "}
-            <a
-              href="https://media.giphy.com/media/MRLc0oJPeTcIw/giphy.gif"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
+            <ExternalLink href="https://media.giphy.com/media/MRLc0oJPeTcIw/giphy.gif">
               Arrested Development
-            </a>
+            </ExternalLink>
             . You can reach me via{" "}
-            <a
-              href="https://twitter.com/williamhoup"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
+            <ExternalLink href="https://twitter.com/williamhoup">
               Twitter
-            </a>{" "}
+            </ExternalLink>{" "}
             or{" "}
-            <a
-              href="https://www.linkedin.com/in/will-houp/"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
+            <ExternalLink href="https://www.linkedin.com/in/will-houp/">
               LinkedIn
-            </a>
+            </ExternalLink>
             .
           </p>
         </article>
 
         <article className="project-list">
-          {data.map((project, index) => {
-            const Link = project.url.includes("http")
-              ? ExternalLink
-              : InternalLink;
+          {data.map(
+            (project, index): ReactNode => {
+              const external = project.url.includes("http");
 
-            return (
-              <section key={`project-${index}`} className="project">
-                <h3>
-                  <Link className="project-link" href={project.url}>
-                    {project.name}
-                  </Link>
-                </h3>
-                {(project.publication || project.date) && (
-                  <h6>
-                    {project.publication}
-                    {project.publication && project.date && " | "}
-                    {project.date}
-                  </h6>
-                )}
-              </section>
-            );
-          })}
+              return (
+                <section key={`project-${index}`} className="project">
+                  <h3>
+                    {external ? (
+                      <ExternalLink className="project-link" href={project.url}>
+                        {project.name}
+                      </ExternalLink>
+                    ) : (
+                      <InternalLink href={project.url}>
+                        <a className="project-link">{project.name}</a>
+                      </InternalLink>
+                    )}
+                  </h3>
+                  {(project.publication || project.date) && (
+                    <h6>
+                      {project.publication}
+                      {project.publication && project.date && " | "}
+                      {project.date}
+                    </h6>
+                  )}
+                </section>
+              );
+            }
+          )}
         </article>
       </main>
 
@@ -111,24 +85,25 @@ export default function Home() {
         }
 
         .project-list {
-          padding-top: 12px;
-          margin-top: 24px;
+          padding-top: 1em;
+          margin-top: 30px;
           border-top: 1px solid #efefef;
         }
 
         .project {
-          margin: 24px 0px;
+          margin: 30px 0px;
         }
 
         h3 {
-          font-size: 1em;
+          font-size: 1.1em;
           line-height: 1.5;
           margin-bottom: 2px;
         }
 
         h6 {
           color: #666;
-          font-size: 0.8em;
+          font-size: 0.85em;
+          font-family: "IBM Plex Mono", monospace;
           font-weight: 400;
         }
 
@@ -171,7 +146,7 @@ export default function Home() {
       `}</style>
 
       <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=PT+Sans&display=swap");
 
         html,
         body {
@@ -197,6 +172,7 @@ export default function Home() {
         h6 {
           font-weight: 500;
           margin: 0;
+          font-family: "PT Sans", sans-serif;
         }
 
         h1 {
