@@ -25,13 +25,7 @@ if (beta) {
   remotePath = `archive.${base};`;
 }
 
-let localPath;
-
-if (flags.includes("next")) {
-  localPath = "./current-site/out/";
-} else {
-  localPath = "./current-site/public/";
-}
+const localPath = "./out/";
 
 const upload = async () => {
   const client = new ftp.Client();

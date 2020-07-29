@@ -1,25 +1,38 @@
 {
-  "name": "willhoup.com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "upload.js",
+  "name": "current-site",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "compile": "tsc --noEmit"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "next": "9.4.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
   "devDependencies": {
-    "basic-ftp": "^4.5.1",
-    "create-next-app": "^9.4.4",
+    "@types/d3": "^5.7.2",
+    "@types/node": "^14.0.26",
+    "@types/react": "^16.9.43",
+    "basic-ftp": "^4.6.2",
+    "d3": "^5.16.0",
+    "date-fns": "^2.14.0",
     "dotenv": "^8.2.0",
+    "gray-matter": "^4.0.2",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "prop-types": "^15.7.2",
+    "remark": "^12.0.0",
+    "remark-html": "^11.0.2",
+    "typescript": "^3.9.7"
   }
 }
