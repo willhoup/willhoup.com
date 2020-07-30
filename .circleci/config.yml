@@ -1,0 +1,25 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm run build
+  compile: 
+    executor: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm run compile
+workflows:
+    build-and-compile:
+      jobs:
+        - build
+        - compile
