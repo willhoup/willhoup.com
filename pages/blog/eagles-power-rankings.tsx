@@ -32,10 +32,14 @@ const metadata = {
 };
 
 export default function Eagles() {
-  const [width, setWidth] = useState(0);
+  const [ww, setWidth] = useState(0);
   const [position, setPosition] = useState<PositionState>({ x: null, y: null });
   const [isVisible, setVisible] = useState(false);
-  const height = width * 0.35;
+  const isMobile = ww < 740;
+  const isTiny = ww < 350;
+  const cols = isTiny ? 1 : isMobile ? 2 : 3;
+  const width = ww / cols;
+  const height = width * (isMobile ? 0.5 : 0.35);
 
   const x = scaleBand()
     .range([0, width - margin * 2])
@@ -60,11 +64,8 @@ export default function Eagles() {
   const index = Math.round(position.x / eachBand);
 
   useEffect(() => {
-    const ww = Math.min(maxWidth, window.innerWidth);
-    const isMobile = ww < 780;
-    const isTiny = ww < 400;
-    const cols = isTiny ? 1 : isMobile ? 2 : 3;
-    setWidth(ww / cols);
+    const ww = Math.min(maxWidth, window.innerWidth - 32);
+    setWidth(ww);
   }, []);
 
   function handleMouseMove(event: MouseEvent<SVGRectElement>) {
@@ -215,7 +216,7 @@ export default function Eagles() {
               <svg style={{ marginBottom: 16 }} width={width} height={height}>
                 <g transform={`translate(${[margin, margin]})`}>
                   <text fontSize="12" dy="-.9em" y={y(1)}>
-                    Historical power-ranking average
+                    Historical average
                   </text>
 
                   <rect
@@ -295,7 +296,7 @@ export default function Eagles() {
                       y2={y(32)}
                     />
                     {weeks
-                      .filter((d, i) => i % 2 === 0)
+                      .filter((d, i) => i % (isMobile ? 3 : 2) === 0)
                       .map(
                         (week): ReactNode => (
                           <text
@@ -513,7 +514,7 @@ export default function Eagles() {
           max-width: ${maxWidth}px;
           margin: 32px auto;
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           flex-wrap: wrap;
         }
 
@@ -548,17 +549,11 @@ export default function Eagles() {
         }
 
         .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          width: 100%;
         }
 
         main {
           padding: 5rem 0;
-          // max-width: 550px;
           flex: 1;
           display: flex;
           flex-direction: column;

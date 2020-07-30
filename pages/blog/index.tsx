@@ -20,6 +20,7 @@ function Blog(props: StaticProps["props"]) {
       <main>
         <article>
           <section>
+            <h1>Writings</h1>
             <p>
               This is my blog I hardly ever update. I'd like to write more, so
               hopefully I'll find the time at some point.
@@ -90,10 +91,7 @@ function Blog(props: StaticProps["props"]) {
         }
 
         .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-
-          // align-items: center;
+          width: 100%;
         }
 
         main {
@@ -104,7 +102,6 @@ function Blog(props: StaticProps["props"]) {
           margin: 0 auto;
           flex-direction: column;
           justify-content: center;
-          // align-items: center;
         }
       `}</style>
     </div>

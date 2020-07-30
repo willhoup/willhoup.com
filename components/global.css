@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  padding: 10px;
+  padding: 16px;
 }
 
 * {
@@ -28,7 +28,7 @@ h6 {
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 28px;
 }
 
 p {
@@ -50,4 +50,11 @@ a:visited {
 
 a.project-link {
   color: #000;
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 34px;
+  }
 }
