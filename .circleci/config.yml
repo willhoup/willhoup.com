@@ -47,6 +47,18 @@ jobs:
       - run:
           name: "Deploy to beta"
           command: "npm run upload beta"
+
+  deploy:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+
+      - run:
+          name: "Deploy to beta"
+          command: "npm run upload"
 workflows:
   build-compile-and-deploy:
     jobs:
@@ -55,15 +67,13 @@ workflows:
           requires:
             - build
       - beta-deploy:
-          name: "deploy to beta"
           context: secrets
           requires:
             - compile
-      # - deploy:
-      #   name: "deploy to production"
-      #   context: secrets
-      #   requires:
-      #     - beta-deploy
-      #   filters:
-      #     branches:
-      #       only: master
+      - deploy:
+          context: secrets
+          requires:
+            - beta-deploy
+          filters:
+            branches:
+              only: master
