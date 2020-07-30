@@ -57,7 +57,7 @@ jobs:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
 
       - run:
-          name: "Deploy to beta"
+          name: "Deploy to production"
           command: "npm run upload"
 workflows:
   build-compile-and-deploy:
@@ -76,7 +76,7 @@ workflows:
       - deploy:
           context: secrets
           requires:
-            - beta-deploy
+            - compile
           filters:
             branches:
               only: master
