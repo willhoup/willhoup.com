@@ -51,19 +51,15 @@ workflows:
   build-compile-and-deploy:
     jobs:
       - build
-      - compile
-        requires:
-          - build
-      - hold:
-          type: approval
+      - compile:
+          name: "compile the app"
           requires:
             - build
-            - compile
       - beta-deploy:
           name: "deploy to beta"
           context: secrets
           requires:
-            - hold
+            - compile
       # - deploy:
       #   name: "deploy to production"
       #   context: secrets
