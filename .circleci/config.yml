@@ -19,9 +19,7 @@ jobs:
           steps:
             - run: npm run compile
 workflows:
-    build:
+    build-and-compile:
       jobs:
         - build
-        - compile:
-          requires:
-            - build
+        - compile
