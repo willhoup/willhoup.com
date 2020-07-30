@@ -9,7 +9,7 @@ export default function Home() {
     <div className="container">
       <Head url="http://willhoup.com" />
 
-      <main>
+      <main className="tight">
         <header>
           <h1 className="title">Hi, I'm Will</h1>
           <img src="/family.jpg" />
@@ -84,10 +84,6 @@ export default function Home() {
       </main>
 
       <style jsx>{`
-        article {
-          width: 100%;
-        }
-
         .project-list {
           padding-top: 1em;
           margin-top: 30px;
@@ -96,19 +92,6 @@ export default function Home() {
 
         .project {
           margin: 30px 0px;
-        }
-
-        h3 {
-          font-size: 1.1em;
-          line-height: 1.5;
-          margin-bottom: 2px;
-        }
-
-        h6 {
-          color: #666;
-          font-size: 0.85em;
-          font-family: "IBM Plex Mono", monospace;
-          font-weight: 400;
         }
 
         header {
@@ -122,95 +105,6 @@ export default function Home() {
           border-radius: 50%;
           max-width: 100px;
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.08);
-        }
-
-        p {
-          font-size: 15px;
-          line-height: 1.7;
-        }
-
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          max-width: 550px;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=PT+Sans&display=swap");
-
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: "IBM Plex Mono", monospace;
-          color: #333;
-        }
-
-        body {
-          padding: 10px;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-weight: 500;
-          margin: 0;
-          font-family: "PT Sans", sans-serif;
-        }
-
-        h1 {
-          font-size: 34px;
-        }
-
-        p {
-          font-weight: 400;
-        }
-
-        a {
-          text-decoration: none;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
-        a,
-        a:visited {
-          color: #326891;
-        }
-
-        a.project-link {
-          color: #000;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
       `}</style>
     </div>

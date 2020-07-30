@@ -16,6 +16,20 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  padding: 2.5rem 0;
+  margin: 0 auto;
+}
+
+main.tight {
+  max-width: 550px;
+}
+
+article,
+div.container {
+  width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -31,8 +45,23 @@ h1 {
   font-size: 28px;
 }
 
+h3 {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 2px;
+}
+
+h6 {
+  color: #666;
+  font-size: 0.85em;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+}
+
 p {
   font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 a {
@@ -57,4 +86,8 @@ a.project-link {
   h1 {
     font-size: 34px;
   }
+
+  /* main {
+    padding: 5rem 0;
+  } */
 }

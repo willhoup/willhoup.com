@@ -41,7 +41,6 @@ function BlogHeader(props: BlogHeaderProps) {
         .byline {
           color: #666;
           line-height: 1.5;
-          // font-family: "PT Sans";
         }
       `}</style>
     </header>

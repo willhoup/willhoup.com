@@ -475,10 +475,6 @@ export default function Eagles() {
       </main>
 
       <style jsx>{`
-        article {
-          width: 100%;
-        }
-
         .path {
           fill: none;
           stroke-width: 0.25;
@@ -522,43 +518,12 @@ export default function Eagles() {
           margin: 2px 0px;
         }
 
-        header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-        }
-
-        img {
-          border-radius: 50%;
-          max-width: 100px;
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.08);
-        }
-
-        p {
-          font-size: 15px;
-          line-height: 1.7;
-        }
-
         p,
         h1,
         .twitter-embed {
           max-width: 550px;
           margin-left: auto;
           margin-right: auto;
-        }
-
-        .container {
-          width: 100%;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
       `}</style>
     </div>
