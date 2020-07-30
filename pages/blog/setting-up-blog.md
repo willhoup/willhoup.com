@@ -5,7 +5,7 @@ date: July 29, 2020
 
 This is the first blog I actually decided to do. It's hard for me to imagine myself keeping this up, to be honest. Maybe I shouldn't call it a blog ...
 
-Anyway, I'm using [`next.js`](https://nextjs.org/) for development, which has been rather smooth overall. I've enjoyed the framework. It does have its own quirks, and I'm always hesitant to go too deep down the rabbit hole of hyper-specialized Javascript (Typescript in this case) because who knows how long I'll be using this.
+Anyway, I'm using [`next.js`](https://nextjs.org/) for development, which has been rather smooth overall. I've enjoyed the framework. I cribbed almost everything from the [blog template](https://nextjs.org/learn/basics/create-nextjs-app). It does have its own quirks, and I'm always hesitant to go too deep down the rabbit hole of hyper-specialized Javascript because who knows how long I'll be using this.
 
 But I'm comfortable with React and found it easy to build this site. At the same time, this site is freaking simple so that would be annoying if it was hard.
 
@@ -29,6 +29,8 @@ title: The rise and fall of the Philadelphia Eagles
 date: June 25, 2017
 end metadata **/
 ```
+
+_**Note**: I'm assuming you're familiar with how [next statically generates pages](https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data) with dynamic routes. Most – if not all – code below is in reference to that process._
 
 I then extract it like so ...
 
@@ -62,7 +64,7 @@ if (!slug.includes(".")) {
 }
 ```
 
-We should be set ... except for static dynamic routing. If `next` is going to export static pages, it needs to know the static pages. At first, this was how I was getting all posts (ripped straight from the tutorial).
+We should be set ... except for static dynamic routing. If `next` is going to export static pages, it needs to know the static pages. At first, this was how I was getting all posts (ripped straight from the [tutorial](https://nextjs.org/learn/basics/dynamic-routes/implement-getstaticpaths)).
 
 ```js
 function getAllPosts(fields = []) {
