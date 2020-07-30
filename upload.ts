@@ -22,12 +22,12 @@ const archive = flags.includes("archive");
 
 // paths
 const base = "willhoup.com";
-let remotePath: string;
+let remotePath: string = base;
 
 if (beta) {
-  remotePath = `beta.${base}`;
+  remotePath = "beta." + base;
 } else if (archive) {
-  remotePath = `archive.${base};`;
+  remotePath = "archive." + base;
 }
 
 const localPath = "./out/";
