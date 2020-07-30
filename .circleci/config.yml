@@ -52,6 +52,8 @@ workflows:
     jobs:
       - build
       - compile
+        requires:
+          - build
       - hold:
           type: approval
           requires:
