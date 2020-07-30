@@ -9,13 +9,13 @@ jobs:
       - checkout
 
       - restore_cache:
-        keys:
-          - dependency-cache-{{ checksum "package.json" }}
-          - dependency-cache-
+          keys:
+            - dependency-cache-{{ checksum "package.json" }}
+            - dependency-cache-
 
       - run:
-          - name: "Instal dependencies"
-          - command: "npm install"
+          name: "Instal dependencies"
+          command: "npm install"
       - run:
           name: "Build static assets"
           command: "npm run build"
@@ -30,8 +30,20 @@ jobs:
     steps:
       - checkout
       - run:
-          - name: "compile app"
-          - command: "npm run compile"
+          name: "compile app"
+          command: "npm run compile"
+
+  beta-deploy:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:12.14
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+
+      - run:
+          name: "Deploy to beta"
+          command: "npm run upload beta"
 workflows:
   build-compile-and-deploy:
     jobs:
@@ -47,11 +59,11 @@ workflows:
           context: secrets
           requires:
             - hold
-      - deploy:
-        name: "deploy to production"
-        context: secrets
-        requires:
-          - beta-deploy
-        filters:
-          branches:
-            only: master
+      # - deploy:
+      #   name: "deploy to production"
+      #   context: secrets
+      #   requires:
+      #     - beta-deploy
+      #   filters:
+      #     branches:
+      #       only: master
