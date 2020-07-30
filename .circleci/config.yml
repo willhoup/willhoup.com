@@ -26,9 +26,12 @@ jobs:
           paths:
             - ~/app
   compile:
-    executor: node/default
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:12.14
     steps:
-      - checkout
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
       - run:
           name: "compile app"
           command: "npm run compile"
