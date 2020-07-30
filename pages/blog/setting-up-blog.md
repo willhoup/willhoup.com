@@ -94,4 +94,4 @@ function getPostSlugs(returnCustomPosts: boolean): string[] {
 
 Ah ha, besides some ephemeral `tagName` errors during development, we're mostly there. These pages can live in harmony.
 
-But I keep thinking there's got to be a better way to do this – maybe my googling for solutions wasn't strong enough. Regardless, we'll see how well this goes and if I come back to make it worth it, haha.
+But I keep thinking there's got to be a better way to do this – maybe my googling for solutions wasn't strong enough. Regardless, we'll see how well this goes and if I come back to make it worth it, haha. You can see the code here: https://github.com/willhoup/willhoup.com.
