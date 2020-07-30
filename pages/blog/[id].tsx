@@ -85,12 +85,7 @@ const Post = (props: StaticProps["props"]) => {
         }
 
         .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          width: 100%;
         }
 
         main {
@@ -98,6 +93,7 @@ const Post = (props: StaticProps["props"]) => {
           max-width: 550px;
           flex: 1;
           display: flex;
+          margin: 0 auto;
           flex-direction: column;
           justify-content: center;
           align-items: center;
