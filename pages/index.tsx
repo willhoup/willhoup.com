@@ -35,7 +35,11 @@ export default function Home() {
             <ExternalLink href="https://media.giphy.com/media/MRLc0oJPeTcIw/giphy.gif">
               Arrested Development
             </ExternalLink>
-            . You can reach me via{" "}
+            . In my spare time, I want to get back into writing again, so I{" "}
+            <InternalLink href="/blog/">
+              <a>started a blog</a>
+            </InternalLink>{" "}
+            but don't expect much there for now. You can reach me via{" "}
             <ExternalLink href="https://twitter.com/williamhoup">
               Twitter
             </ExternalLink>{" "}

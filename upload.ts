@@ -1,11 +1,16 @@
-"use strict";
-
 // simple ftp-uploader
+import * as ftp from "basic-ftp";
+import dotenv from "dotenv";
 
-require("dotenv").config();
-const ftp = require("basic-ftp");
+dotenv.config();
 
-const options = {
+interface ftpOptions {
+  host: string;
+  user: string;
+  password: string;
+}
+
+const options: ftpOptions = {
   host: process.env.host,
   user: process.env.user,
   password: process.env.password,
@@ -17,7 +22,7 @@ const archive = flags.includes("archive");
 
 // paths
 const base = "willhoup.com";
-let remotePath;
+let remotePath: string;
 
 if (beta) {
   remotePath = `beta.${base}`;
@@ -27,7 +32,7 @@ if (beta) {
 
 const localPath = "./out/";
 
-const upload = async () => {
+const upload = async (): Promise<void> => {
   const client = new ftp.Client();
   client.ftp.verbose = true;
 

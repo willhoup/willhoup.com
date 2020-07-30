@@ -212,7 +212,7 @@ export default function Eagles() {
 
           <section className="big">
             <div className="standout">
-              <svg width={width} height={height}>
+              <svg style={{ marginBottom: 16 }} width={width} height={height}>
                 <g transform={`translate(${[margin, margin]})`}>
                   <text fontSize="12" dy="-.9em" y={y(1)}>
                     Historical power-ranking average
@@ -365,17 +365,6 @@ export default function Eagles() {
                         {d.year}
                       </text>
 
-                      <g>
-                        <line
-                          stroke="#000"
-                          strokeWidth=".25"
-                          x1={0}
-                          x2={x("week 18")}
-                          y1={y(1)}
-                          y2={y(1)}
-                        />
-                      </g>
-
                       <path
                         className="path"
                         strokeDasharray="5,5"
@@ -395,32 +384,14 @@ export default function Eagles() {
                         stroke="url(#linear-gradient)"
                       />
 
-                      <g>
-                        <line
-                          stroke="#000"
-                          strokeWidth=".25"
-                          x1={0}
-                          x2={x("week 18")}
-                          y1={y(32)}
-                          y2={y(32)}
-                        />
-                        {weeks
-                          .filter((d, i) => i % 2 === 0)
-                          .map(
-                            (week): ReactNode => (
-                              <text
-                                key={week}
-                                dy="1.35em"
-                                fontSize="10"
-                                textAnchor="middle"
-                                y={y(32)}
-                                x={x(week)}
-                              >
-                                {week.slice(week.indexOf(" "))}
-                              </text>
-                            )
-                          )}
-                      </g>
+                      <line
+                        stroke="#000"
+                        strokeWidth=".25"
+                        x1={0}
+                        x2={x("week 18")}
+                        y1={y(32)}
+                        y2={y(32)}
+                      />
 
                       {isVisible && (
                         <g>
@@ -547,7 +518,7 @@ export default function Eagles() {
         }
 
         section.big svg {
-          margin: 8px 0px;
+          margin: 2px 0px;
         }
 
         header {

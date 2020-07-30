@@ -5,13 +5,15 @@ import { parse, isBefore } from "date-fns";
 
 const postsDirectory = path.join(process.cwd(), "pages/blog");
 
-export function getPostSlugs(returnCustomPosts: boolean = true): string[] {
+export function getPostSlugs(returnCustomPosts: boolean): string[] {
   return fs.readdirSync(postsDirectory).filter((file) => {
-    if (returnCustomPosts) {
-      return !file.includes("index.js") && !file.includes("[id].js");
+    if (file.includes(".draft.")) {
+      return false;
+    } else if (returnCustomPosts) {
+      return !file.includes("index.tsx") && !file.includes("[id].tsx");
+    } else {
+      return !file.includes(".tsx");
     }
-
-    return !file.includes(".js");
   });
 }
 
@@ -27,8 +29,8 @@ export interface IMetadata {
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
   if (!slug.includes(".")) {
-    if (fs.existsSync(`${postsDirectory}/${slug}.js`)) {
-      slug += ".js";
+    if (fs.existsSync(`${postsDirectory}/${slug}.tsx`)) {
+      slug += ".tsx";
     } else {
       slug += ".md";
     }
@@ -43,7 +45,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     metadata.slug = name;
   }
 
-  if (ext === "js") {
+  if (ext === ".tsx") {
     const start = "/** start metadata";
     const openBrackets = file.indexOf(start);
     const closingBrackets = file.indexOf("end metadata **/");

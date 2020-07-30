@@ -18,21 +18,29 @@ function Blog(props: StaticProps["props"]) {
       />
 
       <main>
-        <article className="project-list">
-          {allPosts.map(
-            ({ title, date, slug }, index): ReactNode => {
-              return (
-                <section key={`project-${index}`} className="project">
-                  <h3>
-                    <Link href={`/blog/${slug}`}>
-                      <a className="project-link">{title}</a>
-                    </Link>
-                  </h3>
-                  {date}
-                </section>
-              );
-            }
-          )}
+        <article>
+          <section>
+            <p>
+              This is my blog I hardly ever update. I'd like to write more, so
+              hopefully I'll find the time at some point.
+            </p>
+          </section>
+          <section className="project-list">
+            {allPosts.map(
+              ({ title, date, slug }, index): ReactNode => {
+                return (
+                  <section key={`project-${index}`} className="project">
+                    <h3>
+                      <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+                        <a className="project-link">{title}</a>
+                      </Link>
+                    </h3>
+                    {date}
+                  </section>
+                );
+              }
+            )}
+          </section>
         </article>
       </main>
 
@@ -103,12 +111,12 @@ function Blog(props: StaticProps["props"]) {
   );
 }
 
-export default Blog;
-
 export async function getStaticProps(): Promise<StaticProps> {
-  const allPosts = getAllPosts(["title", "date", "slug"]);
+  const allPosts = getAllPosts(["title", "date", "slug"], true);
 
   return {
     props: { allPosts },
   };
 }
+
+export default Blog;

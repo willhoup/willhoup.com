@@ -40,62 +40,6 @@ function Head(props: HeadProps) {
             `,
         }}
       />
-
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=PT+Sans&display=swap");
-
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: "IBM Plex Mono", monospace;
-          color: #333;
-        }
-
-        body {
-          padding: 10px;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-weight: 500;
-          margin: 0;
-          font-family: "PT Sans", sans-serif;
-        }
-
-        h1 {
-          font-size: 34px;
-        }
-
-        p {
-          font-weight: 400;
-        }
-
-        a {
-          text-decoration: none;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
-        a,
-        a:visited {
-          color: #326891;
-        }
-
-        a.project-link {
-          color: #000;
-        }
-      `}</style>
     </InternalHead>
   );
 }

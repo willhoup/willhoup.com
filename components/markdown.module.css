@@ -4,11 +4,13 @@
 }
 
 .markdown pre {
-  background-color: #fafafa;
+  margin: 24px 0px;
+  line-height: 1.5;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.markdown pre code {
   padding: 1em;
-  font-family: monospace;
-  overflow-x: scroll;
-  line-height: 1.25;
 }
 
 .markdown p code {
