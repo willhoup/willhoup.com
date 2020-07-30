@@ -52,7 +52,6 @@ workflows:
     jobs:
       - build
       - compile:
-          name: "compile the app"
           requires:
             - build
       - beta-deploy:
