@@ -91,9 +91,7 @@ function Blog(props: StaticProps["props"]) {
         }
 
         .container {
-          min-height: 100vh;
-          padding: 0 10px;
-          width: 100vw;
+          width: 100%;
         }
 
         main {

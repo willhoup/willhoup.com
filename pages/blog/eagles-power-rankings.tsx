@@ -64,7 +64,7 @@ export default function Eagles() {
   const index = Math.round(position.x / eachBand);
 
   useEffect(() => {
-    const ww = Math.min(maxWidth, window.innerWidth - 20);
+    const ww = Math.min(maxWidth, window.innerWidth - 32);
     setWidth(ww);
   }, []);
 
