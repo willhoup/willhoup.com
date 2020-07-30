@@ -1,25 +1,57 @@
 version: 2.1
-orbs:
-  node: circleci/node@1.1.6
 jobs:
   build:
-    executor:
-      name: node/default
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:12.14
+
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm run build
-  compile: 
+
+      - restore_cache:
+        keys:
+          - dependency-cache-{{ checksum "package.json" }}
+          - dependency-cache-
+
+      - run:
+          - name: "Instal dependencies"
+          - command: "npm install"
+      - run:
+          name: "Build static assets"
+          command: "npm run build"
+
+      # Save the built repo
+      - save_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/app
+  compile:
     executor: node/default
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm run compile
+      - run:
+          - name: "compile app"
+          - command: "npm run compile"
 workflows:
-    build-and-compile:
-      jobs:
-        - build
-        - compile
+  build-compile-and-deploy:
+    jobs:
+      - build
+      - compile
+      - hold:
+          type: approval
+          requires:
+            - build
+            - compile
+      - beta-deploy:
+          name: "deploy to beta"
+          context: secrets
+          requires:
+            - hold
+      - deploy:
+        name: "deploy to production"
+        context: secrets
+        requires:
+          - beta-deploy
+        filters:
+          branches:
+            only: master
