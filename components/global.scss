@@ -160,3 +160,12 @@ nav.navigation {
     }
   }
 }
+
+.project-list {
+  margin-top: 24px;
+  border-top: 1px solid #efefef;
+
+  .project {
+    margin: 24px 0px;
+  }
+}

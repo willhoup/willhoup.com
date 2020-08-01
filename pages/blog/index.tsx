@@ -47,14 +47,6 @@ function Blog(props: StaticProps["props"]) {
       </main>
 
       <style jsx>{`
-        .project-list {
-          padding-top: 1em;
-        }
-
-        .project {
-          margin: 24px 0px;
-        }
-
         header {
           display: flex;
           align-items: center;

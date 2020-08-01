@@ -84,15 +84,6 @@ export default function Home() {
       </main>
 
       <style jsx>{`
-        .project-list {
-          margin-top: 24px;
-          border-top: 1px solid #efefef;
-        }
-
-        .project {
-          margin: 24px 0px;
-        }
-
         header {
           display: flex;
           align-items: center;
