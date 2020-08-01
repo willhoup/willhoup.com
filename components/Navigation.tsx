@@ -55,8 +55,6 @@ function Navigation(props) {
       </ul>
     </nav>
   );
-
-  return <nav>{base}</nav>;
 }
 
 export default Navigation;
