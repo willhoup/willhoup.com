@@ -1,7 +1,8 @@
 // import "../styles.css";
 import { ReactType } from "react";
-import "../components/global.css";
+import "../components/global.scss";
 import "highlight.js/styles/monokai.css";
+import { getAllDomains } from "../lib/getSiteData";
 
 interface AppWrapperProps {
   Component: ReactType;
@@ -10,6 +11,7 @@ interface AppWrapperProps {
 
 function AppWrapper(props: AppWrapperProps) {
   const { Component, pageProps } = props;
+  // console.log(props);
   return <Component {...pageProps} />;
 }
 

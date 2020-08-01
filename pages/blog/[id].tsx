@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "../../components/Head";
 import BlogHeader from "../../components/BlogHeader";
 import PostBody from "../../components/PostBody";
@@ -53,8 +54,8 @@ const Post = (props: StaticProps["props"]) => {
 
 export default Post;
 
-export async function getStaticProps(props: Path): Promise<StaticProps> {
-  const { params } = props;
+export const getStaticProps: GetStaticProps = async (context: Path) => {
+  const { params } = context;
   const post = getPostBySlug(params.id, [
     "title",
     "slug",
@@ -73,9 +74,9 @@ export async function getStaticProps(props: Path): Promise<StaticProps> {
       content,
     },
   };
-}
+};
 
-export async function getStaticPaths(): Promise<StaticPaths> {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getAllPosts(["slug"], false);
 
   return {
@@ -88,4 +89,4 @@ export async function getStaticPaths(): Promise<StaticPaths> {
     }),
     fallback: false,
   };
-}
+};

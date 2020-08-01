@@ -35,11 +35,11 @@ export default function Home() {
             <ExternalLink href="https://media.giphy.com/media/MRLc0oJPeTcIw/giphy.gif">
               Arrested Development
             </ExternalLink>
-            . In my spare time, I want to get back into writing again, so I{" "}
+            . In my spare time, I want to get back into writing again,{" "}
             <InternalLink href="/blog/">
-              <a>started a blog</a>
+              <a>so I started a blog</a>
             </InternalLink>{" "}
-            but don't expect much there for now. You can reach me via{" "}
+            – but don't expect much there for now. You can reach me via{" "}
             <ExternalLink href="https://twitter.com/williamhoup">
               Twitter
             </ExternalLink>{" "}
@@ -85,13 +85,12 @@ export default function Home() {
 
       <style jsx>{`
         .project-list {
-          padding-top: 1em;
-          margin-top: 30px;
+          margin-top: 24px;
           border-top: 1px solid #efefef;
         }
 
         .project {
-          margin: 30px 0px;
+          margin: 24px 0px;
         }
 
         header {

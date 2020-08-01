@@ -10,7 +10,6 @@ export const ProjectList: IProjectList[] = [
   {
     name: "Public coronavirus case data for the United States",
     url: "https://www.nytimes.com/article/coronavirus-county-data-us.html",
-    date: "March 28, 2020",
     publication: "The New York Times",
     assets: [],
   },
@@ -19,7 +18,6 @@ export const ProjectList: IProjectList[] = [
     url:
       "https://www.nytimes.com/interactive/2020/03/03/us/elections/results-super-tuesday-primary-election.html",
     publication: "The New York Times",
-    date: "",
     assets: [],
   },
   {
