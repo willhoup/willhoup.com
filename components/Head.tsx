@@ -46,7 +46,7 @@ function Head(props: HeadProps) {
           }}
         />
       </InternalHead>
-      <Navigation url={url} />
+      <Navigation />
     </>
   );
 }

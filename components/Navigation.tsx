@@ -5,8 +5,7 @@ import { ReactNode } from "react";
 
 const basePages = ["/", "blog"];
 
-function Navigation(props) {
-  console.log(props);
+function Navigation() {
   const router = useRouter();
   const pathname = router.asPath;
   const [basePage = "/", ...subpages] = pathname.split("/").filter(Boolean);
