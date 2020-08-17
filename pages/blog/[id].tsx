@@ -6,22 +6,13 @@ import PostBody from "../../components/PostBody";
 import { getPostBySlug, getAllPosts, IMetadata } from "../../lib/getPostData";
 import markdownHtml from "../../lib/markdownToHtml";
 
-interface StaticProps {
-  props: IMetadata;
-}
-
 interface Path {
   params: {
     id: string;
   };
 }
 
-interface StaticPaths {
-  paths: Path[];
-  fallback: boolean;
-}
-
-const Post = (props: StaticProps["props"]) => {
+const Post = (props: IMetadata) => {
   const { title, description, content, date, updated_at, note } = props;
   const router = useRouter();
   const { id } = router.query;

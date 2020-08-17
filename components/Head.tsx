@@ -23,10 +23,22 @@ function Head(props: HeadProps) {
         <meta property="og:url" content={url} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {og_title && <meta property="og:title" content={og_title} />}
-        {description && (
-          <meta property="og:description" content={description} />
+        {og_title && (
+          <>
+            <meta property="twitter:title" content={og_title} />
+            <meta property="og:title" content={og_title} />
+          </>
         )}
+        {description && (
+          <>
+            <meta property="twitter:description" content={description} />
+            <meta property="og:description" content={description} />
+          </>
+        )}
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@williamhoup" />
+        <meta property="og:type" content="article" />
 
         <meta property="og:site_name" content="willhoup.com" />
 
