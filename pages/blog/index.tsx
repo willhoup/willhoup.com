@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { GetStaticProps } from "next";
 import Head from "../../components/Head";
 import Link from "next/link";
 import { getAllPosts, IMetadata } from "../../lib/getPostData";
@@ -14,7 +15,7 @@ function Blog(props: StaticProps["props"]) {
       <Head
         og_title="Will Houp's Blog"
         url="http://willhoup.com/blog"
-        description="This is my blog I hardly ever update"
+        description="I don't write as much anymore. I'm hoping this blog will help change that."
       />
 
       <main className="tight">
@@ -22,8 +23,8 @@ function Blog(props: StaticProps["props"]) {
           <section>
             <h1>Writings</h1>
             <p>
-              This is my blog I hardly ever update. I'd like to write more, so
-              hopefully I'll find the time at some point.
+              I don't write as much anymore. I'm hoping this blog will help
+              change that.
             </p>
           </section>
           <section className="project-list">
@@ -36,7 +37,7 @@ function Blog(props: StaticProps["props"]) {
                         <a className="project-link">{title}</a>
                       </Link>
                     </h3>
-                    {date}
+                    <h6>{date}</h6>
                   </section>
                 );
               }
@@ -46,14 +47,6 @@ function Blog(props: StaticProps["props"]) {
       </main>
 
       <style jsx>{`
-        .project-list {
-          padding-top: 1em;
-        }
-
-        .project {
-          margin: 30px 0px;
-        }
-
         header {
           display: flex;
           align-items: center;
@@ -65,12 +58,12 @@ function Blog(props: StaticProps["props"]) {
   );
 }
 
-export async function getStaticProps(): Promise<StaticProps> {
+export const getStaticProps: GetStaticProps = async () => {
   const allPosts = getAllPosts(["title", "date", "slug"], true);
 
   return {
     props: { allPosts },
   };
-}
+};
 
 export default Blog;

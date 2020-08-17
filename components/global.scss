@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=PT+Sans&display=swap");
+
+$desktop: 768px;
+$spacing: 8px;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  color: #333;
+}
+
+body {
+  padding: $spacing * 2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding: 2.5rem 0;
+  margin: 0 auto;
+
+  &.tight {
+    max-width: 550px;
+  }
+}
+
+article,
+div.container {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0;
+  font-family: "PT Sans", sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+
+  @media (min-width: $desktop) {
+    h1 {
+      font-size: 34px;
+    }
+  }
+}
+
+h3 {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: $spacing / 4;
+}
+
+h6 {
+  color: #666;
+  font-size: 0.85em;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+}
+
+p {
+  font-weight: 400;
+  font-size: $spacing * 2 - 1;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: #326891;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: #326891;
+  }
+
+  &.project-link {
+    color: #000;
+  }
+}
+
+nav.navigation {
+  @media (min-width: $desktop) {
+    position: fixed;
+    top: 2.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: $spacing / 4 0;
+
+      &.navigation-subpage {
+        padding: 0 0 0 $spacing * 2;
+
+        a {
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      @media (min-width: $desktop) {
+        padding-left: $spacing * 2;
+      }
+
+      &.navigation-base-highlight {
+        text-decoration: underline;
+      }
+
+      &.navigation-base {
+        > a {
+          &::after {
+            position: absolute;
+            display: block;
+            content: " ";
+            top: calc(50%);
+            left: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            border-left: 1px solid;
+            height: $spacing;
+          }
+        }
+      }
+
+      a {
+        color: #000;
+        font-size: 12px;
+        padding: 0 0 0 $spacing * 2;
+
+        position: relative;
+
+        &::before {
+          position: absolute;
+          display: block;
+          content: " ";
+          top: calc(50% - 1px);
+          left: 0;
+          transform: translateY(-50%);
+          width: $spacing * 1.5;
+          border-bottom: 1px solid;
+          height: 1px;
+        }
+      }
+    }
+  }
+}
+
+.project-list {
+  margin-top: 24px;
+  border-top: 1px solid #efefef;
+
+  .project {
+    margin: 24px 0px;
+  }
+}

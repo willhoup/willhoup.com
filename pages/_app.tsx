@@ -1,6 +1,5 @@
-// import "../styles.css";
 import { ReactType } from "react";
-import "../components/global.css";
+import "../components/global.scss";
 import "highlight.js/styles/monokai.css";
 
 interface AppWrapperProps {
