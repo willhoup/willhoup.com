@@ -1,5 +1,6 @@
 ---
 title: News organizations should care more about link rot
+description: Each CMS change I've been a part of draws a line in the sand – effectively saying anything before this point is lost. Not only does creating a useful archive for readers (and journalists) get that much harder, but the history represented in those articles is another step removed from public knowledge.
 date: August 17, 2020
 ---
 
