@@ -1,6 +1,6 @@
 ---
 title: News organizations should care more about link rot
-date: August 4, 2020
+date: August 17, 2020
 ---
 
 One of my favorite — if not my favorite — ironies I've experienced working in journalism is when a media company invests as little as it can in a content management system. No matter that this piece of software literally sits at the heart of how we make our money, let's pour our cash into the cheapest option!
@@ -11,13 +11,13 @@ My first experience with this phenomenon occurred after Northwestern University 
 
 After a certain date, I would never again be able to read the mediocre-to-decent news stories I wrote in school 😔. That was fine, though, because like I said I didn't need them. Where this was much more painful was a few years later after I left The Virginian-Pilot.
 
-Early on in my time at the paper, we went from a homegrown Drupal fork [to signing a contract with Town News](https://townnews.com/news_room/study-shows-that-townnews-coms-blox-cms-is-most-used-daily-newspaper-cms/article_d348b9a6-565f-11e5-9f65-b70fe7fc3b0c.html). That changing of the guard torpedoed almost everything previously published. The few custom pages I had built just sat in a total broken state — javascript disappearing or referencing missing assets only God knew the whereabouts of. Even more painful was a decade of stories stripped of any metadata now floating in a search API abyss.
+Early on in my time at the paper, we went from a homegrown Drupal fork [to signing a contract with Town News](https://townnews.com/news_room/study-shows-that-townnews-coms-blox-cms-is-most-used-daily-newspaper-cms/article_d348b9a6-565f-11e5-9f65-b70fe7fc3b0c.html). That changing of the guard torpedoed almost everything previously published. The few custom pages I had built just sat in a broken state — javascript disappearing or referencing missing assets only God knew the whereabouts of. Even more painful was a decade of stories stripped of any metadata now floating in a search API abyss.
 
 There are plenty of excuses, and an enterprise CMS isn't built to talk to an in-house iteration of an open source platform. Fine, I guess.
 
 I was at The Pilot for 2-2.5 more years. In my final months, [the paper was bought by honky Tronc](https://www.pilotonline.com/business/article_27dff746-6336-11e8-ae3a-77e23727ceab.html) with rumors of switching to [The Washington Post's Arc Publishing system](https://www.arcpublishing.com/).
 
-Initially I had cautiously optimistic thoughts since moving to a CMS run by another newspapercould go somewhat smoothly. By this time, though, I had built dozens of custom elements and pages. My entire resume relied on the Town News ecosystem (specific CSS classes and rules, width of article templates, custom HTML placement, etc). Switching could immediately render all of those projects obsolete.
+Initially I had cautiously optimistic thoughts since moving to a CMS run by another newspaper could go somewhat smoothly. By this time, though, I had built dozens of custom elements and pages. My entire resume relied on the Town News ecosystem (specific CSS classes and rules, width of article templates, custom HTML placement, etc). Switching could immediately render all of those projects obsolete.
 
 Spoiler alert: [It did](https://www.pilotonline.com/weather/article_17edcd65-a754-5911-a399-bbd73ffdcbaa.html).
 
