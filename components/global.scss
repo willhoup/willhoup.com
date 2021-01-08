@@ -60,6 +60,10 @@ h3 {
   margin-bottom: $spacing / 4;
 }
 
+h4 {
+  font-size: 15px;
+}
+
 h6 {
   color: #666;
   font-size: 0.85em;
@@ -126,7 +130,8 @@ nav.navigation {
         > a {
           &::after {
             position: absolute;
-            display: block;
+            // display: block;
+            display: none;
             content: " ";
             top: calc(50%);
             left: 0;

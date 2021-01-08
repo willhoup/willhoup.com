@@ -1,8 +1,10 @@
+import { ReactNode } from "react";
+
 import Head from "../components/Head";
 import { ProjectList as data } from "./api/data";
 import ExternalLink from "../components/ExternalLink";
 import InternalLink from "next/link";
-import { ReactNode } from "react";
+import { createSpacing } from "../lib/constants";
 
 export default function Home() {
   return (
@@ -76,6 +78,35 @@ export default function Home() {
                       {project.date}
                     </h6>
                   )}
+
+                  {project.assets && (
+                    <ul>
+                      {project.assets.map(
+                        (asset, assetIndex): ReactNode => {
+                          const external = asset.url.includes("http");
+
+                          return (
+                            <li key={`project-${index}-asset-${assetIndex}`}>
+                              <h4>
+                                {external ? (
+                                  <ExternalLink
+                                    className="project-link"
+                                    href={asset.url}
+                                  >
+                                    {asset.name}
+                                  </ExternalLink>
+                                ) : (
+                                  <InternalLink href={asset.url}>
+                                    <a className="project-link">{asset.name}</a>
+                                  </InternalLink>
+                                )}
+                              </h4>
+                            </li>
+                          );
+                        }
+                      )}
+                    </ul>
+                  )}
                 </section>
               );
             }
@@ -95,6 +126,15 @@ export default function Home() {
           border-radius: 50%;
           max-width: 100px;
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        ul {
+          margin: ${createSpacing(0.5, 0, 0.5, 1)};
+          padding-left: ${createSpacing(2)};
+        }
+
+        ul li {
+          padding: ${createSpacing(0.25, 0)};
         }
       `}</style>
     </div>

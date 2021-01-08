@@ -32,13 +32,14 @@ const metadata = {
 };
 
 export default function Eagles() {
-  const [ww, setWidth] = useState(0);
+  const [windowWidth, setWidth] = useState(0);
   const [position, setPosition] = useState<PositionState>({ x: null, y: null });
   const [isVisible, setVisible] = useState(false);
-  const isMobile = ww < 740;
-  const isTiny = ww < 350;
+
+  const isMobile = windowWidth < 740;
+  const isTiny = windowWidth < 350;
   const cols = isTiny ? 1 : isMobile ? 2 : 3;
-  const width = ww / cols;
+  const width = windowWidth / cols;
   const height = width * (isMobile ? 0.5 : 0.35);
 
   const x = scaleBand()
@@ -166,7 +167,7 @@ export default function Eagles() {
               async
               src="//platform.twitter.com/widgets.js"
               charSet="utf-8"
-            ></script>
+            />
           </div>
 
           <p>

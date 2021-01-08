@@ -7,7 +7,7 @@ const postsDirectory = path.join(process.cwd(), "pages/blog");
 
 export function getPostSlugs(returnCustomPosts: boolean): string[] {
   return fs.readdirSync(postsDirectory).filter((file) => {
-    if (file.includes(".draft.")) {
+    if (file.includes(".draft.") && process.env.NODE_ENV !== "development") {
       return false;
     } else if (returnCustomPosts) {
       return !file.includes("index.tsx") && !file.includes("[id].tsx");
