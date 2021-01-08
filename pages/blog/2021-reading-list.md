@@ -51,7 +51,7 @@ With this on my mind, I like the idea of returning to something that outlines th
 
   I read Walton's first two _Lost World_ pieces and found them very helpful in putting the Old Testament in context as well as setting the scene for ancient literature and culture.
 
-  Violence in the Old Testament has been one of the hardest things for me to square in scripture. I have a lot of thoughts and have had many discussions on this and still have lingering questions. Trying to re-contexualize the writing in its time and for its purpose is difficult and stepping out of my 21st century frame can feel almost impossible.
+  God-ordained violence in the Old Testament has been one of the hardest things for me to square in scripture. I have a lot of thoughts and have had many discussions on this and still have lingering questions. Trying to re-contexualize the writing in its time and for its purpose is difficult and stepping out of my 21st century frame can feel almost impossible.
 
   In _The Lost World of Genesis One_, Walton was very helpful in framing and defining scripture and the world around it. I'm hoping for some enlightened thoughts in this one as
 

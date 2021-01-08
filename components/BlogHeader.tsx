@@ -9,7 +9,7 @@ interface BlogHeaderProps {
 }
 
 function BlogHeader(props: BlogHeaderProps) {
-  const { title, byline, date, updated_at = "", note = "" } = props;
+  const { title, byline, date, updated_at, note } = props;
   return (
     <header className="blog-header">
       <h1>{title}</h1>
