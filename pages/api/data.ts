@@ -1,9 +1,12 @@
-export interface IProjectList {
+interface IProject {
   name: string;
   url: string;
   date?: string;
   publication?: string;
-  assets?: string[];
+}
+
+export interface IProjectList extends IProject {
+  assets?: IProject[];
 }
 
 export const ProjectList: IProjectList[] = [
@@ -11,14 +14,29 @@ export const ProjectList: IProjectList[] = [
     name: "Public coronavirus case data for the United States",
     url: "https://www.nytimes.com/article/coronavirus-county-data-us.html",
     publication: "The New York Times",
-    assets: [],
+    assets: [
+      {
+        name: "Github repository",
+        url: "https://github.com/nytimes/covid-19-data",
+      },
+      {
+        name: "Covid-19 Tracker",
+        url:
+          "https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html",
+      },
+    ],
   },
   {
-    name: "Live 2020 Primary Election Results",
-    url:
-      "https://www.nytimes.com/interactive/2020/03/03/us/elections/results-super-tuesday-primary-election.html",
+    name: "2020 General Election Results",
+    url: "http://nytimes.com/elections",
     publication: "The New York Times",
-    assets: [],
+    assets: [
+      {
+        name: "Primary results",
+        url:
+          "https://www.nytimes.com/interactive/2020/03/03/us/elections/results-super-tuesday-primary-election.html",
+      },
+    ],
   },
   {
     name: "Inequality is an undeniable fact in America",
