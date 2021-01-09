@@ -5,7 +5,7 @@ date: January 8, 2021
 
 At the start of 2017, I made a list of books I wanted to read for several years but never had. There were some real bangers in the 20-odd titles (and real duds), but I read them all. It was the first time in a while that I had stuck with a New Year's resolution – basically out of spite since having an uncomfortable, public-shaming moment with a start-of-the-year change at the age of 12.
 
-It's not like this resolution was difficult; reading is fun even without a library card. The list did accomplish a couple of things, though. Namely, it push me out of my normie vein of literary fiction. And while it was challenging to stay disciplined through like a million words (i.e. video games are a lot easier to consume than pages), I feel like the seeds I started to sow were focused on intentionality. 2020 has now brought that into stark relief for me.
+It's not like this resolution was difficult; reading is fun even without a library card. The list did accomplish a couple of things, though. Namely, it pushed me out of my normie vein of literary fiction. And while it was challenging to stay disciplined through like a million words (i.e. video games are a lot easier to consume than pages), I feel like the seeds I started to sow were focused on intentionality. 2020 has now brought that into stark relief for me.
 
 Even the concept of time has had to run the gauntlet for a few laps this pandemic. On top of the obvious global health crisis, [being a new dad](https://www.instagram.com/p/B78aOM2HmY-/) puts a serious emphasis on my time management. (being a new dad is freaking awesome btw).
 
@@ -53,6 +53,6 @@ With this on my mind, I like the idea of returning to something that outlines th
 
   God-ordained violence in the Old Testament has been one of the hardest things for me to square in scripture. I have a lot of thoughts and have had many discussions on this and still have lingering questions. Trying to re-contexualize the writing in its time and for its purpose is difficult and stepping out of my 21st century frame can feel almost impossible.
 
-  In _The Lost World of Genesis One_, Walton was very helpful in framing and defining scripture and the world around it. I'm hoping for some enlightened thoughts in this one as
+  In _The Lost World of Genesis One_, Walton was very helpful in framing and defining scripture and the world around it. I'm hoping for some enlightened thoughts in this one as well.
 
 <small>_\*(subject to change and subject to me forgetting to update this list when it changes)._</small>
