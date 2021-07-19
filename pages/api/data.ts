@@ -16,8 +16,13 @@ export const ProjectList: IProjectList[] = [
     publication: "The New York Times",
     assets: [
       {
-        name: "Github repository",
-        url: "https://github.com/nytimes/covid-19-data",
+        name: "2021 Pulitzer Prize for Public Service",
+        url: "https://www.pulitzer.org/winners/new-york-times-6",
+      },
+      {
+        name: "How we collected Covid-19 data",
+        url:
+          "https://open.nytimes.com/tracking-covid-19-from-hundreds-of-sources-one-extracted-record-at-a-time-dd8cbd31f9b4",
       },
       {
         name: "Covid-19 Tracker",
