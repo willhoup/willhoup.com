@@ -73,6 +73,7 @@ workflows:
           filters:
             branches:
               ignore: master
+              only: /beta-.*/
       - deploy:
           context: secrets
           requires:
