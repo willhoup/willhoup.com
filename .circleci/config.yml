@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: circleci/node:12.14
+      - image: circleci/node:14.15
 
     steps:
       - checkout
@@ -28,7 +28,7 @@ jobs:
   compile:
     working_directory: ~/app
     docker:
-      - image: circleci/node:12.14
+      - image: circleci/node:14.15
     steps:
       - restore_cache:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
@@ -39,7 +39,7 @@ jobs:
   beta-deploy:
     working_directory: ~/app
     docker:
-      - image: circleci/node:12.14
+      - image: circleci/node:14.15
     steps:
       - restore_cache:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
@@ -51,7 +51,7 @@ jobs:
   deploy:
     working_directory: ~/app
     docker:
-      - image: circleci/node:12.14
+      - image: circleci/node:14.15
     steps:
       - restore_cache:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
