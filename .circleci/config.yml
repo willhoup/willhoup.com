@@ -72,7 +72,7 @@ workflows:
             - compile
           filters:
             branches:
-              ignore: master
+              ignore: main
               only: /beta-.*/
       - deploy:
           context: secrets
@@ -80,4 +80,4 @@ workflows:
             - compile
           filters:
             branches:
-              only: master
+              only: main
